@@ -131,71 +131,150 @@
   </div>
   <div class="spacer-lg"></div>
 
-  <!-- PRICING SECTION -->
-  <div class="pricing-section" id="pricing">
-    <div class="pricing-title">Pricing</div>
-    <div class="pricing-cards">
-      <div class="pricing-card">
-        <div class="price">$129<span style="font-size:0.5em;">/month</span></div>
-        <div class="pricing-feat">1 app<br>Dashboard access</div>
-        <button class="pay-btn" onclick="window.open('https://buy.stripe.com/test_xxx123')">Pay Now</button>
-      </div>
-      <div class="pricing-card">
-        <div class="price">$649<span style="font-size:0.5em;">/month</span></div>
-        <div class="pricing-feat">Up to 5 apps<br>Priority support</div>
-        <button class="pay-btn" onclick="window.open('https://buy.stripe.com/test_xxx456')">Pay Now</button>
-      </div>
-      <div class="pricing-card">
-        <div class="price">$3,999<span style="font-size:0.5em;">/month</span></div>
-        <div class="pricing-feat">Unlimited apps<br>Custom audit, SLAs</div>
-        <button class="pay-btn" onclick="window.open('https://buy.stripe.com/test_xxx789')">Pay Now</button>
-      </div>
-    </div>
-    <div style="text-align:center;margin-top:18px;color:#777;">All payments handled via secure Stripe checkout. Contact us for custom quotes or yearly billing.</div>
-  </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ZK-PV - Zero-Knowledge Privacy Vault for AI</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <style>
+        body { font-family: 'Inter', Arial, sans-serif; margin: 0; background: #fcfcfc; }
+        header { background: linear-gradient(90deg, #212529, #6b47dc 90%); color: #fff; padding: 50px 0 30px 0; text-align: center; }
+        .logo { font-size: 2.1em; letter-spacing: 0.1em; font-weight: bold; }
+        .subtitle { font-size: 1.5em; font-weight: 400; color: #dedede; margin-top: 10px; }
+        .section { max-width: 950px; margin: 40px auto; padding: 36px 26px; background: #fff; border-radius: 16px; box-shadow: 0 2px 22px #c2ccf522; }
+        .section-title { font-size: 2em; margin-bottom: 18px; color: #333; }
+        .steps { margin: 18px 0 0 0; padding: 0; }
+        .steps li { margin-bottom: 10px; font-size: 1.15em; }
+        .example-arch { display: flex; flex-wrap: wrap; align-items: flex-start; gap: 32px; }
+        .arch-text { flex: 1; }
+        .arch-diagram { flex: 1; min-width: 320px; display: flex; align-items: center; justify-content: center; }
+        .pricing-cards { display: flex; gap: 24px; justify-content: center; }
+        .card { background: #f8fafc; border: 2px solid #e0e0e0; border-radius: 14px; padding: 26px 30px; min-width: 230px; text-align: center; }
+        .card h3 { margin: 0 0 8px 0; color: #6b47dc; }
+        .card .price { font-size: 2.2em; color: #333; margin: 7px 0; font-weight: 700; }
+        .pay-btn { background: #6b47dc; color: #fff; font-size: 1.15em; padding: 15px 38px; border-radius: 30px; border: none; margin-top: 16px; cursor: pointer; transition: 0.2s; }
+        .pay-btn:hover { background: #492b96; }
+        .diagram-svg { background: #eee; border-radius: 20px; padding: 16px; width: 98%; }
+        .faq { margin: 0; padding: 0; }
+        .faq li { margin-bottom: 12px; }
+        .contact { margin: 36px 0 0 0; text-align: center; color: #555; font-size: 1.1em; }
+        @media (max-width: 800px) {
+            .section { padding: 14px 4vw; }
+            .example-arch { flex-direction: column; }
+        }
+    </style>
+    <script>
+      // Redirige vers Stripe Checkout quand tu cliques sur le bouton "Pay with Stripe"
+      function payNow() {
+        // REMPLACE L'URL PAR TA SESSION STRIPE!
+        window.location.href = "https://buy.stripe.com/test_xxxxREMPLACExxxx";
+      }
+    </script>
+</head>
+<body>
+<header>
+    <div class="logo">ZK-PV</div>
+    <div class="subtitle">Zero-Knowledge Protection for AI & LLMs — Block GDPR leaks before they reach OpenAI.</div>
+</header>
 
-  <!-- INSTALLATION SECTION -->
-  <div class="install-section" id="install">
-    <div class="install-title">How to install ZK-PV in your workflow?</div>
-    <div class="install-steps">
-      <div class="install-step">
-        <svg width="50" height="50"><rect x="8" y="8" width="34" height="34" rx="10" fill="#ece9f7"/></svg>
-        <div class="install-num">1. Deploy the proxy</div>
-        <div class="install-desc">Spin up ZK-PV as a Docker container, cloud function, or managed API endpoint.</div>
-      </div>
-      <div class="install-step">
-        <svg width="50" height="50"><circle cx="25" cy="25" r="17" fill="#f5f7fa"/></svg>
-        <div class="install-num">2. Point your LLM API</div>
-        <div class="install-desc">Update your AI application's endpoint to go through <code>api.zkpv.io</code> instead of OpenAI.</div>
-      </div>
-      <div class="install-step">
-        <svg width="50" height="50"><polygon points="25,7 43,43 7,43" fill="#ededed"/></svg>
-        <div class="install-num">3. Get GDPR-proof</div>
-        <div class="install-desc">All your prompts are now protected—instantly. Monitor blocked requests in your dashboard.</div>
-      </div>
+<section class="section" style="text-align: center;">
+    <span style="font-size: 1.2em; color: #6b47dc; font-weight: 500;">Try ZK-PV today</span>
+    <div class="pricing-cards" style="margin-top:18px;">
+        <div class="card">
+            <h3>Starter</h3>
+            <div class="price">$129<span style="font-size:0.5em;">/month</span></div>
+            <div>1 LLM app<br>Basic dashboard</div>
+            <button class="pay-btn" onclick="payNow()">Pay with Stripe</button>
+        </div>
+        <div class="card">
+            <h3>Business</h3>
+            <div class="price">$649<span style="font-size:0.5em;">/month</span></div>
+            <div>Up to 5 apps<br>Priority support</div>
+            <button class="pay-btn" onclick="payNow()">Pay with Stripe</button>
+        </div>
+        <div class="card">
+            <h3>Enterprise</h3>
+            <div class="price">$3,999<span style="font-size:0.5em;">/month</span></div>
+            <div>Unlimited apps<br>Audit, SLAs, support</div>
+            <button class="pay-btn" onclick="payNow()">Pay with Stripe</button>
+        </div>
     </div>
-    <div style="text-align:center;margin-top:18px;color:#777;">
-      <b>Need help?</b> <a href="mailto:support@zkpv.io" style="color:#764ba2">Contact us</a> for setup guides or enterprise options.
-    </div>
-  </div>
+    <div style="margin-top: 20px; color:#888;">Contact us for custom enterprise needs or on-prem deployment.</div>
+</section>
 
-  <!-- WORKFLOW ARCHITECTURE (with shapes) -->
-  <div class="workflow-section">
-    <div class="workflow-title">Example workflow: Where to place ZK-PV</div>
-    <div class="workflow-arch">
-      <svg width="340" height="82" viewBox="0 0 340 82">
-        <rect x="15" y="23" width="45" height="38" rx="9" fill="#ece9f7"/>
-        <text x="38" y="75" font-size="13" fill="#333" text-anchor="middle">USER</text>
-        <polygon points="81,42 105,20 129,42 105,64" fill="#ededed"/>
-        <text x="105" y="78" font-size="13" fill="#333" text-anchor="middle">APP</text>
-        <circle cx="185" cy="42" r="22" fill="#f5f7fa"/>
-        <text x="185" y="77" font-size="13" fill="#764ba2" text-anchor="middle">ZK-PV</text>
-        <rect x="230" y="23" width="45" height="38" rx="18" fill="#e7e6f6"/>
-        <text x="253" y="77" font-size="13" fill="#333" text-anchor="middle">LLM</text>
-        <!-- Arrows -->
-        <polyline points="60,42 81,42" stroke="#999" stroke-width="3" fill="none" marker-end="url(#arr)"/>
-        <polyline points="129,42 163,42" stroke="#999" stroke-width="3" fill="none" marker-end="url(#arr)"/>
-        <polyline points="207,42 230,42" stroke="#999" stroke-width="3" fill="none" marker-end="url(#
+<section class="section">
+    <div class="section-title">How does ZK-PV work?</div>
+    <ol class="steps">
+        <li><b>1. Install the proxy</b>: Deploy ZK-PV as a lightweight Docker container or a managed cloud endpoint.</li>
+        <li><b>2. Change your LLM endpoint</b>: Update your API URL (e.g., OpenAI) to route through ZK-PV.</li>
+        <li><b>3. Done!</b> All prompts are now checked for PII and protected — GDPR-proof.</li>
+    </ol>
+</section>
+
+<section class="section">
+    <div class="section-title">Where to install ZK-PV?</div>
+    <div class="example-arch">
+        <div class="arch-text">
+            <ul>
+                <li><b>Directly before your LLM API (OpenAI, Anthropic, Azure, etc).</b></li>
+                <li><b>In a microservice workflow</b> (protect every chat or data ingestion).</li>
+                <li><b>As a reverse proxy</b> in your cloud or on-premise infra.</li>
+                <li><b>In the data pipeline</b> (masking sensitive data before storage or model calls).</li>
+            </ul>
+        </div>
+        <div class="arch-diagram">
+            <!-- Simple SVG workflow with geometric icons (unique style) -->
+            <svg width="320" height="140" viewBox="0 0 320 140" class="diagram-svg">
+                <rect x="10" y="45" width="60" height="60" rx="10" fill="#d4d8e2"/>
+                <text x="40" y="105" text-anchor="middle" fill="#6b47dc" font-size="13">User</text>
+                <polygon points="95,75 125,45 155,75 125,105" fill="#c0c6f6"/>
+                <text x="125" y="120" text-anchor="middle" fill="#6b47dc" font-size="13">App</text>
+                <circle cx="200" cy="75" r="30" fill="#eee"/>
+                <text x="200" y="120" text-anchor="middle" fill="#6b47dc" font-size="13">ZK-PV</text>
+                <rect x="250" y="45" width="60" height="60" rx="30" fill="#c0c6f6"/>
+                <text x="280" y="120" text-anchor="middle" fill="#6b47dc" font-size="13">LLM</text>
+                <polyline points="70,75 95,75" stroke="#999" stroke-width="4" fill="none" marker-end="url(#arrow)"/>
+                <polyline points="155,75 170,75" stroke="#999" stroke-width="4" fill="none" marker-end="url(#arrow)"/>
+                <polyline points="230,75 250,75" stroke="#999" stroke-width="4" fill="none" marker-end="url(#arrow)"/>
+                <defs>
+                    <marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto" markerUnits="strokeWidth">
+                        <path d="M0,0 L8,4 L0,8" fill="#999"/>
+                    </marker>
+                </defs>
+            </svg>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="section-title">FAQ</div>
+    <ul class="faq">
+        <li><b>How am I billed?</b><br>
+            Secure payment via Stripe (monthly subscription, cancel anytime).
+        </li>
+        <li><b>Can I install ZK-PV on-premise?</b><br>
+            Yes! Contact us for a custom on-premise or air-gapped deployment.
+        </li>
+        <li><b>Does it work with any LLM?</b><br>
+            Yes: OpenAI, Azure, Anthropic, Gemini, open-source LLMs, etc.
+        </li>
+        <li><b>Do I need to modify my app code?</b><br>
+            No: just change your API endpoint URL to go through ZK-PV.
+        </li>
+        <li><b>Can I export my compliance data?</b><br>
+            Yes: every blocked request and audit log is downloadable in your dashboard.
+        </li>
+    </ul>
+</section>
+
+<div class="contact">
+    <div style="margin-bottom:8px;"><b>Need help? Email <a href="mailto:support@zkpv.io">support@zkpv.io</a></b></div>
+    <div>© 2025 ZK-PV — All rights reserved</div>
+</div>
+</body>
+</html>
+
 
 
 
