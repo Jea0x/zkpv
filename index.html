@@ -5,206 +5,241 @@
   <title>ZK-PV – Zero-knowledge. Real protection.</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-    :root {
-      --primary: #111;
-      --accent: #f9f9f9;
-      --gray: #aaa;
-      --card: #f6f6f6;
-      --radius: 18px;
-    }
+    /* Google Fonts for modern look */
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@900;600;400&display=swap');
     body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      margin: 0;
+      margin: 0; padding: 0;
+      font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
       background: #fff;
-      color: var(--primary);
+      color: #222;
     }
-    .navbar {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 32px 7vw 18px 7vw;
-      font-size: 20px;
-      font-weight: 600;
+    header {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 32px 5vw 8px 5vw;
     }
-    .nav-logo {
+    .logo {
+      font-weight: 900;
+      font-size: 1.3rem;
       letter-spacing: 1px;
+      color: #111;
     }
-    .nav-links a {
-      margin-left: 28px;
-      text-decoration: none;
-      color: var(--primary);
-      opacity: 0.8;
-      transition: opacity 0.2s;
+    nav a {
+      margin: 0 22px;
+      color: #666; text-decoration: none; font-weight: 500; font-size: 1.02rem;
+      transition: color 0.2s;
     }
-    .nav-links a:hover {
-      opacity: 1;
+    nav a:hover { color: #000; }
+    .cta-btn {
+      background: #111; color: #fff; border: none; padding: 10px 28px; border-radius: 24px;
+      font-weight: 700; font-size: 1rem; cursor: pointer; box-shadow: 0 2px 12px #0001;
+      transition: background 0.2s;
     }
-    .try-btn {
-      background: #111;
-      color: #fff;
-      padding: 9px 22px;
-      border-radius: 30px;
-      text-decoration: none;
-      font-size: 15px;
-      margin-left: 32px;
-      font-weight: 500;
-      border: none;
-      cursor: pointer;
-    }
+    .cta-btn:hover { background: #764ba2; }
+
     .hero {
-      text-align: center;
-      margin-top: 36px;
-      margin-bottom: 54px;
-      padding: 0 4vw;
+      margin-top: 30px; text-align: center;
+      animation: fadein 1s cubic-bezier(.61,.12,.68,.95);
+    }
+    @keyframes fadein {
+      from { opacity: 0; transform: translateY(24px);}
+      to { opacity: 1; transform: translateY(0);}
     }
     .hero h1 {
-      font-size: 2.6em;
-      font-weight: 800;
-      margin: 0;
-      margin-bottom: 18px;
-      letter-spacing: -1.2px;
-    }
-    .hero h2 {
-      color: #888;
-      font-size: 1.5em;
-      font-weight: 600;
-      margin: 0 0 48px 0;
-    }
-    .card-section {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 38px;
-      margin-bottom: 72px;
-      padding: 0 7vw;
-    }
-    .card {
-      background: var(--card);
-      border-radius: var(--radius);
-      min-width: 320px;
-      flex: 1 1 350px;
-      max-width: 440px;
-      padding: 38px 32px 32px 32px;
-      text-align: left;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      min-height: 260px;
-      box-shadow: 0 1px 6px #0001;
-    }
-    .card svg {
-      margin-bottom: 18px;
-      opacity: 0.14;
-      width: 64px;
-      height: 64px;
-    }
-    .card-title {
-      font-size: 1.24em;
-      font-weight: 700;
+      font-size: 2.7rem;
+      font-weight: 900;
+      letter-spacing: -2px;
       margin-bottom: 10px;
+      color: #111;
     }
-    .card-desc {
-      color: #666;
-      font-size: 1.04em;
-      font-weight: 500;
-      line-height: 1.5;
+    .hero p {
+      font-size: 1.5rem;
+      color: #999;
+      margin-bottom: 50px;
+      font-weight: 600;
     }
+
+    .main-illustration {
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 48px auto; width: 600px; max-width: 95vw;
+      height: 320px; border-radius: 24px;
+      background: #f7f7f7;
+      animation: fadein 1.5s 0.3s both;
+    }
+    .main-illustration svg { width: 130px; height: 90px; opacity: 0.11; }
+
+    .section-row {
+      display: flex; justify-content: center; gap: 44px; flex-wrap: wrap;
+      margin: 40px 0 0 0;
+    }
+    .feature-box {
+      background: #fafafa;
+      border-radius: 18px;
+      box-shadow: 0 2px 14px #1111;
+      width: 320px; min-width: 260px; max-width: 95vw;
+      margin: 18px 0;
+      padding: 44px 24px;
+      display: flex; flex-direction: column; align-items: center; text-align: center;
+      animation: fadein 1s 0.3s both;
+      transition: box-shadow .18s;
+    }
+    .feature-box:hover { box-shadow: 0 6px 32px #764ba222; }
+    .feature-box svg { width: 46px; margin-bottom: 20px; }
+
+    .feature-title {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: #111;
+      margin-bottom: 9px;
+    }
+    .feature-desc {
+      color: #888; font-weight: 500; font-size: 1rem;
+    }
+
+    /* Accordion FAQ */
     .faq-section {
-      max-width: 600px;
-      margin: 40px auto 0 auto;
-      padding: 0 10vw;
-    }
-    .faq-item {
-      margin-bottom: 24px;
-      border-bottom: 1px solid #eee;
-      padding-bottom: 14px;
+      margin: 55px auto 0 auto; max-width: 680px;
+      padding: 0 5vw;
     }
     .faq-q {
-      font-weight: bold;
-      margin-bottom: 7px;
-      font-size: 1.1em;
+      font-weight: 700; background: #f5f5f7; margin: 0 0 8px 0; border-radius: 9px;
+      padding: 22px 28px; cursor: pointer; color: #111;
+      transition: background .2s;
+      font-size: 1.13rem;
     }
+    .faq-q:hover { background: #e6e4ff; }
     .faq-a {
-      color: #666;
-      font-size: 1em;
+      background: #fafaff; color: #444; margin: -7px 0 15px 0;
+      border-left: 3px solid #764ba2; border-radius: 0 0 7px 7px;
+      padding: 14px 28px 20px 32px; font-size: 1.04rem;
+      display: none;
+      animation: fadein 0.6s;
     }
-    .footer {
-      padding: 44px 0 20px 0;
-      background: #fafbfc;
-      text-align: center;
-      font-size: 1em;
-      color: #888;
-      margin-top: 72px;
+    .faq-q.open + .faq-a { display: block; }
+
+    .callout {
+      text-align: center; margin: 90px 0 35px 0;
     }
-    @media (max-width: 950px) {
-      .card-section { flex-direction: column; align-items: center; gap: 32px;}
-      .navbar, .card-section { padding-left: 5vw; padding-right: 5vw;}
+    .callout h2 {
+      font-size: 2rem; font-weight: 900; letter-spacing: -1.5px; color: #111; margin-bottom: 8px;
     }
-    @media (max-width: 650px) {
-      .navbar { flex-direction: column; gap: 10px;}
-      .card { min-width: 80vw; padding: 25px 12px; }
+    .callout p {
+      font-size: 1.18rem; color: #888;
+    }
+    .callout .cta-btn {
+      margin-top: 28px;
+    }
+    /* Footer */
+    footer {
+      margin: 55px 0 0 0;
+      padding: 42px 0 24px 0;
+      text-align: center; color: #bbb; font-size: 1rem;
+      border-top: 1px solid #ececec;
+    }
+
+    /* Responsive */
+    @media (max-width: 800px) {
+      .main-illustration { width: 95vw; height: 180px; }
+      .section-row { flex-direction: column; align-items: center; gap: 0; }
+      .feature-box { width: 94vw; padding: 30px 10px; }
+      header { flex-direction: column; gap: 10px; }
+    }
+    @media (max-width: 500px) {
+      .hero h1 { font-size: 1.5rem; }
+      .main-illustration { height: 90px;}
     }
   </style>
 </head>
 <body>
-  <!-- Navbar -->
-  <nav class="navbar">
-    <div class="nav-logo">ZK-PV<sup>©</sup></div>
-    <div class="nav-links">
+  <!-- Header + Navigation -->
+  <header>
+    <div class="logo">ZK-PV<sup style="font-size:.6em;color:#9b59b6">®</sup></div>
+    <nav>
       <a href="#features">Features</a>
       <a href="#security">Security</a>
       <a href="#demo">Demo</a>
-      <a href="#try" class="try-btn">Try Now</a>
-    </div>
-  </nav>
+    </nav>
+    <button class="cta-btn" onclick="window.location.href='mailto:sales@zkpv.io'">Try Now</button>
+  </header>
 
-  <!-- Hero -->
+  <!-- Hero Section -->
   <div class="hero">
     <h1>Zero-knowledge. Real protection.</h1>
-    <h2>Block sensitive data leaks before they ever reach <span style="color:#333;font-weight:800;">AI</span>.</h2>
+    <p>Block sensitive data leaks before they ever reach <span style="color:#764ba2">AI</span>.</p>
   </div>
 
-  <!-- Features Cards -->
-  <section class="card-section" id="features">
-    <div class="card">
-      <!-- SVG placeholder for shield -->
-      <svg viewBox="0 0 60 60"><rect x="15" y="15" width="30" height="30" rx="6" fill="#222"/></svg>
-      <div class="card-title">GDPR Shield.</div>
-      <div class="card-desc">Real-time masking of sensitive PII—ensure compliance on every prompt, instantly.</div>
-    </div>
-    <div class="card">
-      <svg viewBox="0 0 60 60"><circle cx="30" cy="30" r="19" fill="#222"/></svg>
-      <div class="card-title">Cryptographic proof.</div>
-      <div class="card-desc">Show, don’t tell: Every interaction is cryptographically verifiable, no data exposure.</div>
-    </div>
-    <div class="card">
-      <svg viewBox="0 0 60 60"><polygon points="30,14 52,47 8,47" fill="#222"/></svg>
-      <div class="card-title">Deploy in minutes.</div>
-      <div class="card-desc">Plug & play proxy: Protect your data fast, no code change.</div>
-    </div>
-  </section>
+  <div class="main-illustration">
+    <!-- SVG inspired by Framer’s icons -->
+    <svg viewBox="0 0 120 50" fill="none">
+      <rect x="5" y="15" width="32" height="32" rx="6" fill="#764ba2"/>
+      <circle cx="60" cy="31" r="16" fill="#667eea"/>
+      <polygon points="100,46 72,46 86,21" fill="#22223b"/>
+    </svg>
+  </div>
 
-  <!-- FAQ -->
-  <section class="faq-section" id="demo">
-    <div class="faq-item">
-      <div class="faq-q">How does ZK-PV protect personal data?</div>
-      <div class="faq-a">By blocking and masking all sensitive data (PII) before it reaches any AI system, with real-time audit and cryptographic proof.</div>
+  <!-- Features Row -->
+  <div class="section-row" id="features">
+    <div class="feature-box">
+      <svg viewBox="0 0 48 48"><rect x="6" y="6" width="36" height="36" rx="8" fill="#764ba2" opacity="0.11"/></svg>
+      <div class="feature-title">GDPR Shield.</div>
+      <div class="feature-desc">
+        Real-time masking of sensitive PII—ensure compliance<br>on every prompt, instantly.
+      </div>
     </div>
-    <div class="faq-item">
-      <div class="faq-q">Do I need to modify my code to use ZK-PV?</div>
-      <div class="faq-a">No—just deploy the proxy in front of your AI endpoints. No code changes needed!</div>
+    <div class="feature-box">
+      <svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="18" fill="#667eea" opacity="0.11"/></svg>
+      <div class="feature-title">Cryptographic proof.</div>
+      <div class="feature-desc">
+        Show, don’t tell: Every interaction is cryptographically<br>verifiable, no data exposure.
+      </div>
     </div>
-    <div class="faq-item">
-      <div class="faq-q">How can I verify ZK-PV's effectiveness?</div>
-      <div class="faq-a">Each blocked event is logged, auditable, and cryptographically proven—so you have verifiable proof of protection.</div>
+    <div class="feature-box">
+      <svg viewBox="0 0 48 48"><polygon points="24,6 42,42 6,42" fill="#22223b" opacity="0.11"/></svg>
+      <div class="feature-title">Deploy in minutes.</div>
+      <div class="feature-desc">
+        Plug &amp; play proxy: Protect your data fast, no code change.
+      </div>
     </div>
-  </section>
+  </div>
+
+  <!-- FAQ/Accordion Section -->
+  <div class="faq-section" id="faq">
+    <div class="faq-q" onclick="toggleFaq(this)">+ How does ZK-PV protect personal data?</div>
+    <div class="faq-a">
+      ZK-PV acts as a proxy in front of your AI APIs.<br>
+      It analyzes all prompts in real time and blocks or masks personal data (PII) <b>before</b> it can ever reach the AI or LLM provider. No modification to your app code is needed.
+    </div>
+    <div class="faq-q" onclick="toggleFaq(this)">+ Do I need to modify my code to use ZK-PV?</div>
+    <div class="faq-a">
+      Not at all. Simply change your API endpoint from <code>api.openai.com</code> to <code>api.zkpv.io</code> and insert your API key. ZK-PV takes care of the rest. Zero code change.
+    </div>
+    <div class="faq-q" onclick="toggleFaq(this)">+ How can I verify ZK-PV’s effectiveness?</div>
+    <div class="faq-a">
+      Every blocked request is logged in your dashboard, and you receive cryptographic proof of each detection. You can view a live demo or request a compliance report anytime.
+    </div>
+  </div>
+
+  <!-- Call to Action -->
+  <div class="callout" id="demo">
+    <h2>Demand privacy. Get proof.</h2>
+    <p>Bring zero-knowledge security to your AI workflows—today.</p>
+    <button class="cta-btn" onclick="window.location.href='mailto:sales@zkpv.io?subject=Book%20a%20demo'">Book your live demo</button>
+  </div>
 
   <!-- Footer -->
-  <footer class="footer">
-    &copy; 2025 ZK-PV • All rights reserved. &nbsp; | &nbsp;
-    <a href="mailto:contact@zkpv.io" style="color:#333;text-decoration:underline;">Contact</a>
+  <footer>
+    <div>
+      <span style="color:#22223b;font-weight:700;">ZK-PV</span> &copy; 2025. All rights reserved.<br>
+      Made with ❤️ for privacy by <a href="mailto:sales@zkpv.io" style="color:#764ba2;text-decoration:none;">zkpv.io</a>
+    </div>
   </footer>
+
+  <!-- Accordion JS -->
+  <script>
+    function toggleFaq(el) {
+      document.querySelectorAll('.faq-q').forEach(q => { if(q!==el) q.classList.remove('open'); });
+      el.classList.toggle('open');
+    }
+  </script>
 </body>
 </html>
 
