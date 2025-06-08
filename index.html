@@ -109,27 +109,49 @@
     </div>
   </div>
 
-  <!-- Main Illustration -->
+ <!-- Main Illustration -->
   <div class="main-illustration">
-    <!-- Geometric modern SVG -->
-    <svg viewBox="0 0 400 220">
-      <rect x="24" y="80" width="80" height="80" rx="22" fill="#E7E6F6"/>
-      <circle cx="180" cy="120" r="46" fill="#F4F5FB"/>
-      <polygon points="340,195 380,195 360,150" fill="#EEEFF7"/>
-      <!-- Flow arrows -->
-      <polyline points="105,120 130,120" stroke="#bbb" stroke-width="4" fill="none" marker-end="url(#arr)"/>
-      <polyline points="226,120 320,120" stroke="#bbb" stroke-width="4" fill="none" marker-end="url(#arr)"/>
-      <!-- User/App/Proxy/AI labels -->
-      <text x="64" y="180" font-size="16" fill="#764ba2" text-anchor="middle">USER</text>
-      <text x="180" y="180" font-size="16" fill="#764ba2" text-anchor="middle">APP</text>
-      <text x="360" y="180" font-size="16" fill="#764ba2" text-anchor="middle">AI</text>
-      <text x="226" y="145" font-size="13" fill="#764ba2" text-anchor="middle">ZK-PV Proxy</text>
-      <defs>
-        <marker id="arr" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto" markerUnits="strokeWidth">
-          <path d="M0,0 L10,5 L0,10" fill="#bbb"/>
-        </marker>
-      </defs>
-    </svg>
+    <div class="illustration-content">
+      <svg width="400" height="300" viewBox="0 0 400 300">
+        <!-- User -->
+        <rect x="20" y="120" width="60" height="60" rx="12" fill="#e5e7eb"/>
+        <text x="50" y="200" font-size="14" fill="#666" text-anchor="middle">User</text>
+        
+        <!-- App -->
+        <rect x="120" y="120" width="60" height="60" rx="12" fill="#f3f4f6"/>
+        <text x="150" y="200" font-size="14" fill="#666" text-anchor="middle">App</text>
+        
+        <!-- ZK-PV Shield -->
+        <circle cx="250" cy="150" r="40" fill="#667eea" opacity="0.1"/>
+        <circle cx="250" cy="150" r="30" fill="#667eea" opacity="0.2"/>
+        <circle cx="250" cy="150" r="20" fill="#667eea"/>
+        <text x="250" y="155" font-size="12" fill="white" text-anchor="middle" font-weight="600">ZK-PV</text>
+        <text x="250" y="200" font-size="14" fill="#667eea" text-anchor="middle" font-weight="600">Shield</text>
+        
+        <!-- AI -->
+        <rect x="320" y="120" width="60" height="60" rx="30" fill="#e5e7eb"/>
+        <text x="350" y="200" font-size="14" fill="#666" text-anchor="middle">AI</text>
+        
+        <!-- Arrows -->
+        <path d="M80 150 L120 150" stroke="#999" stroke-width="2" marker-end="url(#arrowhead)"/>
+        <path d="M180 150 L210 150" stroke="#999" stroke-width="2" marker-end="url(#arrowhead)"/>
+        <path d="M290 150 L320 150" stroke="#667eea" stroke-width="2" marker-end="url(#arrowhead-primary)"/>
+        
+        <!-- PII Blocked indicator -->
+        <text x="250" y="100" font-size="16" fill="#ef4444" text-anchor="middle" font-weight="600">
+          🚫 PII Blocked
+        </text>
+        
+        <defs>
+          <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+            <path d="M0,0 L10,5 L0,10" fill="#999"/>
+          </marker>
+          <marker id="arrowhead-primary" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+            <path d="M0,0 L10,5 L0,10" fill="#667eea"/>
+          </marker>
+        </defs>
+      </svg>
+    </div>
   </div>
 
   <!-- Features -->
