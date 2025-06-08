@@ -2,312 +2,210 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>ZK-PV | Real-time Zero-Knowledge AI Privacy Shield</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="ZK-PV is the world's first zero-knowledge, real-time privacy firewall for AI—instantly blocking all PII leaks with cryptographic proof.">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+  <title>ZK-PV – Zero-knowledge. Real protection.</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     :root {
-      --accent: #5a45ff;
-      --accent2: #4de8ce;
-      --dark: #181b23;
-      --gray: #e8eaf1;
-      --radius: 22px;
+      --primary: #111;
+      --accent: #f9f9f9;
+      --gray: #aaa;
+      --card: #f6f6f6;
+      --radius: 18px;
     }
-    html, body { margin:0; padding:0; }
     body {
-      background: linear-gradient(115deg, #181b23 60%, #4de8ce 100%);
-      font-family: 'Inter', Arial, sans-serif;
-      color: #fff;
-      min-height: 100vh;
-      position: relative;
-      overflow-x: hidden;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      margin: 0;
+      background: #fff;
+      color: var(--primary);
     }
     .navbar {
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      padding: 30px 8vw 10px 8vw;
+      justify-content: space-between;
+      padding: 32px 7vw 18px 7vw;
       font-size: 20px;
-      background: transparent;
-      z-index: 10;
+      font-weight: 600;
     }
-    .logo {
-      font-weight: 900;
-      letter-spacing: 2px;
-      font-size: 1.3em;
-      background: linear-gradient(90deg, var(--accent), var(--accent2));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+    .nav-logo {
+      letter-spacing: 1px;
     }
     .nav-links a {
-      color: #fff;
+      margin-left: 28px;
       text-decoration: none;
-      margin-left: 34px;
-      font-weight: 600;
-      opacity: 0.85;
-      transition: opacity 0.18s;
+      color: var(--primary);
+      opacity: 0.8;
+      transition: opacity 0.2s;
     }
-    .nav-links a:hover { opacity: 1; }
-    .cta-btn {
-      background: var(--accent);
+    .nav-links a:hover {
+      opacity: 1;
+    }
+    .try-btn {
+      background: #111;
       color: #fff;
-      border-radius: 50px;
-      padding: 10px 30px;
+      padding: 9px 22px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-size: 15px;
       margin-left: 32px;
-      font-size: 17px;
-      font-weight: bold;
+      font-weight: 500;
       border: none;
       cursor: pointer;
-      transition: background 0.2s, transform 0.2s;
-      box-shadow: 0 2px 12px #5a45ff55;
-    }
-    .cta-btn:hover { background: var(--accent2); transform: scale(1.04);}
-    .hero-bg {
-      position: absolute;
-      top: -80px; left: 50%; width: 95vw; height: 590px;
-      transform: translateX(-50%);
-      z-index: 0;
-      pointer-events: none;
-      filter: blur(9px) brightness(1.2) opacity(0.25);
-      background: radial-gradient(circle at 50% 35%, #4de8ce 0%, #181b23 65%);
-      animation: hue 12s linear infinite alternate;
-    }
-    @keyframes hue {
-      from { filter: blur(9px) brightness(1.2) hue-rotate(0deg) opacity(0.25);}
-      to   { filter: blur(13px) brightness(1.18) hue-rotate(26deg) opacity(0.34);}
     }
     .hero {
       text-align: center;
-      padding: 100px 4vw 64px 4vw;
-      z-index: 2;
-      position: relative;
+      margin-top: 36px;
+      margin-bottom: 54px;
+      padding: 0 4vw;
     }
-    .hero-title {
-      font-size: 2.9em;
-      font-weight: 900;
+    .hero h1 {
+      font-size: 2.6em;
+      font-weight: 800;
+      margin: 0;
+      margin-bottom: 18px;
       letter-spacing: -1.2px;
-      margin-bottom: 19px;
-      line-height: 1.1;
-      color: #fff;
-      text-shadow: 0 6px 32px #0004;
     }
-    .changing-word {
-      background: linear-gradient(90deg, var(--accent), var(--accent2));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      font-weight: 900;
-      transition: color 0.4s;
+    .hero h2 {
+      color: #888;
+      font-size: 1.5em;
+      font-weight: 600;
+      margin: 0 0 48px 0;
     }
-    .hero-desc {
-      color: #b2fff4;
-      font-size: 1.4em;
-      max-width: 700px;
-      margin: 0 auto 35px auto;
-      font-weight: 500;
-    }
-    .hero-img {
-      margin: 50px auto 0 auto;
-      display: flex; justify-content: center;
-    }
-    .section {
-      margin: 70px auto 60px auto;
-      max-width: 1150px;
-      padding: 0 6vw;
-      position: relative;
-      z-index: 2;
-    }
-    .cards {
-      display: flex; flex-wrap: wrap;
-      gap: 30px;
+    .card-section {
+      display: flex;
+      flex-wrap: wrap;
       justify-content: center;
-      margin: 0 -10px;
+      gap: 38px;
+      margin-bottom: 72px;
+      padding: 0 7vw;
     }
     .card {
-      background: rgba(30,34,48,0.92);
+      background: var(--card);
       border-radius: var(--radius);
-      padding: 40px 32px 32px 32px;
-      min-width: 340px;
-      max-width: 410px;
-      flex: 1 1 330px;
-      margin: 10px 0;
-      box-shadow: 0 4px 24px #1112;
-      transition: transform 0.18s, box-shadow 0.18s;
-      opacity: 0; transform: translateY(45px) scale(0.97);
-      animation: fadeInCard 0.8s ease forwards;
-      animation-delay: calc(var(--i) * 0.16s);
+      min-width: 320px;
+      flex: 1 1 350px;
+      max-width: 440px;
+      padding: 38px 32px 32px 32px;
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      min-height: 260px;
+      box-shadow: 0 1px 6px #0001;
     }
-    @keyframes fadeInCard {
-      to { opacity: 1; transform: none; }
-    }
-    .card img {
-      width: 56px; height: 56px; margin-bottom: 18px; border-radius: 12px;
-      box-shadow: 0 2px 8px #2ce8ff22;
+    .card svg {
+      margin-bottom: 18px;
+      opacity: 0.14;
+      width: 64px;
+      height: 64px;
     }
     .card-title {
-      font-size: 1.19em;
+      font-size: 1.24em;
       font-weight: 700;
-      color: var(--accent2);
-      margin-bottom: 12px;
-      letter-spacing: -0.2px;
+      margin-bottom: 10px;
     }
     .card-desc {
-      color: #e8eaf1;
-      font-size: 1.08em;
-      font-weight: 400;
-      line-height: 1.6;
-    }
-    .why-section {
-      text-align: center;
-      margin: 100px auto 40px auto;
-    }
-    .why-title {
-      font-size: 2em;
-      font-weight: 800;
-      background: linear-gradient(90deg, var(--accent), var(--accent2));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      margin-bottom: 18px;
-    }
-    .why-points {
-      max-width: 670px;
-      margin: 0 auto;
-      color: #b2fff4;
-      font-size: 1.23em;
-      line-height: 1.6;
+      color: #666;
+      font-size: 1.04em;
+      font-weight: 500;
+      line-height: 1.5;
     }
     .faq-section {
-      background: #242539;
-      border-radius: var(--radius);
-      max-width: 670px;
-      margin: 68px auto 0 auto;
-      padding: 36px 28px 34px 28px;
-      box-shadow: 0 1px 14px #0002;
+      max-width: 600px;
+      margin: 40px auto 0 auto;
+      padding: 0 10vw;
     }
-    .faq-title { 
-      font-size: 1.32em; 
-      font-weight: 700; 
-      color: #4de8ce; 
-      margin-bottom: 16px; 
+    .faq-item {
+      margin-bottom: 24px;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 14px;
     }
     .faq-q {
       font-weight: bold;
-      margin: 20px 0 8px 0;
-      color: #fff;
+      margin-bottom: 7px;
       font-size: 1.1em;
     }
     .faq-a {
-      color: #b2fff4;
+      color: #666;
       font-size: 1em;
-      margin-bottom: 9px;
     }
     .footer {
+      padding: 44px 0 20px 0;
+      background: #fafbfc;
       text-align: center;
-      color: #c0c6d6;
       font-size: 1em;
-      margin-top: 70px;
-      padding: 32px 0 22px 0;
-      background: #191a25;
+      color: #888;
+      margin-top: 72px;
     }
-    .footer a { color: #fff; text-decoration: underline; }
     @media (max-width: 950px) {
-      .cards { flex-direction: column; align-items: center; }
-      .navbar, .section { padding-left: 4vw; padding-right: 4vw;}
-      .hero { padding-left: 4vw; padding-right: 4vw;}
+      .card-section { flex-direction: column; align-items: center; gap: 32px;}
+      .navbar, .card-section { padding-left: 5vw; padding-right: 5vw;}
     }
     @media (max-width: 650px) {
-      .navbar { flex-direction: column; gap: 14px;}
-      .card { min-width: 88vw; max-width: 97vw; }
-      .faq-section { padding: 19px 7vw;}
-      .why-section { margin-top: 52px;}
+      .navbar { flex-direction: column; gap: 10px;}
+      .card { min-width: 80vw; padding: 25px 12px; }
     }
   </style>
 </head>
 <body>
-  <div class="hero-bg"></div>
   <!-- Navbar -->
   <nav class="navbar">
-    <span class="logo">ZK-PV<sup>®</sup></span>
+    <div class="nav-logo">ZK-PV<sup>©</sup></div>
     <div class="nav-links">
       <a href="#features">Features</a>
-      <a href="#why">Why ZK-PV?</a>
-      <a href="#faq">FAQ</a>
-      <a href="#demo" class="cta-btn">Try Demo</a>
+      <a href="#security">Security</a>
+      <a href="#demo">Demo</a>
+      <a href="#try" class="try-btn">Try Now</a>
     </div>
   </nav>
-  <!-- Hero Section -->
-  <header class="hero">
-    <h1 class="hero-title">
-      <span class="changing-word" id="changingWord">Zero-knowledge</span>. Real protection.<br>
-    </h1>
-    <div class="hero-desc">
-      Block <b>sensitive data leaks</b> before they ever reach <span style="color:#4de8ce; font-weight: 700;">AI</span>.<br>
-      The only privacy shield with <b>verifiable cryptographic proof</b> for your workflows.
+
+  <!-- Hero -->
+  <div class="hero">
+    <h1>Zero-knowledge. Real protection.</h1>
+    <h2>Block sensitive data leaks before they ever reach <span style="color:#333;font-weight:800;">AI</span>.</h2>
+  </div>
+
+  <!-- Features Cards -->
+  <section class="card-section" id="features">
+    <div class="card">
+      <!-- SVG placeholder for shield -->
+      <svg viewBox="0 0 60 60"><rect x="15" y="15" width="30" height="30" rx="6" fill="#222"/></svg>
+      <div class="card-title">GDPR Shield.</div>
+      <div class="card-desc">Real-time masking of sensitive PII—ensure compliance on every prompt, instantly.</div>
     </div>
-    <div class="hero-img">
-      <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80"
-           alt="Digital privacy shield" width="170" height="170"
-           style="border-radius: 50%; box-shadow:0 2px 18px #2ce8ff33; margin-bottom:5px;">
+    <div class="card">
+      <svg viewBox="0 0 60 60"><circle cx="30" cy="30" r="19" fill="#222"/></svg>
+      <div class="card-title">Cryptographic proof.</div>
+      <div class="card-desc">Show, don’t tell: Every interaction is cryptographically verifiable, no data exposure.</div>
     </div>
-  </header>
-  <!-- Feature Cards Section -->
-  <section class="section" id="features">
-    <div class="cards">
-      <div class="card" style="--i:0;">
-        <img src="https://images.unsplash.com/photo-1510511459019-5dda7724fd87?auto=format&fit=crop&w=400&q=80" alt="Privacy shield">
-        <div class="card-title">GDPR Shield.</div>
-        <div class="card-desc">Instant masking & blocking of all personal data (PII) at the edge, no code to change, no leaks ever.</div>
-      </div>
-      <div class="card" style="--i:1;">
-        <img src="https://images.unsplash.com/photo-1465101162946-4377e57745c3?auto=format&fit=crop&w=400&q=80" alt="Cryptographic proof">
-        <div class="card-title">Cryptographic Proof.</div>
-        <div class="card-desc">Every data event is hashed and timestamped—your compliance is mathematically guaranteed, not just claimed.</div>
-      </div>
-      <div class="card" style="--i:2;">
-        <img src="https://images.unsplash.com/photo-1468581264429-2548ef9eb732?auto=format&fit=crop&w=400&q=80" alt="Zero knowledge deployment">
-        <div class="card-title">Deploy in Minutes.</div>
-        <div class="card-desc">No developer time. Plug-and-play in front of your AI endpoints. Enjoy live dashboard, reporting & peace of mind.</div>
-      </div>
+    <div class="card">
+      <svg viewBox="0 0 60 60"><polygon points="30,14 52,47 8,47" fill="#222"/></svg>
+      <div class="card-title">Deploy in minutes.</div>
+      <div class="card-desc">Plug & play proxy: Protect your data fast, no code change.</div>
     </div>
   </section>
-  <!-- Why Section -->
-  <section class="why-section" id="why">
-    <div class="why-title">Why ZK-PV is Unlike Anything Else</div>
-    <div class="why-points">
-      <ul style="text-align:left;max-width:500px;margin:30px auto 0 auto;list-style: disc;">
-        <li>🔒 <b>Zero-Knowledge Privacy:</b> Even we can’t see your data—fully auditable.</li>
-        <li>🛡️ <b>Instant GDPR/FIPPA Compliance:</b> No leaks, no fines, no stress.</li>
-        <li>⚡ <b>Real-Time Blocker:</b> Data is sanitized or blocked <i>before</i> hitting AI—proven in milliseconds.</li>
-        <li>🧾 <b>Cryptographic Audit Trail:</b> Every event verifiable by 3rd parties. Prove your compliance, always.</li>
-        <li>🤝 <b>Seamless Deployment:</b> One step, no code changes, works with any AI or cloud workflow.</li>
-      </ul>
+
+  <!-- FAQ -->
+  <section class="faq-section" id="demo">
+    <div class="faq-item">
+      <div class="faq-q">How does ZK-PV protect personal data?</div>
+      <div class="faq-a">By blocking and masking all sensitive data (PII) before it reaches any AI system, with real-time audit and cryptographic proof.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Do I need to modify my code to use ZK-PV?</div>
+      <div class="faq-a">No—just deploy the proxy in front of your AI endpoints. No code changes needed!</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">How can I verify ZK-PV's effectiveness?</div>
+      <div class="faq-a">Each blocked event is logged, auditable, and cryptographically proven—so you have verifiable proof of protection.</div>
     </div>
   </section>
-  <!-- FAQ Section -->
-  <section class="faq-section" id="faq">
-    <div class="faq-title">FAQ</div>
-    <div class="faq-q">How does ZK-PV actually block PII?</div>
-    <div class="faq-a">We scan, detect, and block or mask all personal info (emails, names, IDs, SSNs, credit cards, IBANs, etc) before any data leaves your company or hits an AI endpoint.</div>
-    <div class="faq-q">How can I prove to auditors I’m GDPR compliant?</div>
-    <div class="faq-a">Every blocked/masked data event is cryptographically hashed & timestamped, stored securely, and verifiable by auditors—zero trust needed.</div>
-    <div class="faq-q">Is ZK-PV hard to install?</div>
-    <div class="faq-a">No! Deploy as a proxy or API gateway. 5 min setup. No code change. Works with any SaaS, cloud, or on-prem AI.</div>
-    <div class="faq-q">How much does it cost?</div>
-    <div class="faq-a">Plans start at $129/month. See <a href="mailto:sales@zkpv.io">contact us</a> for enterprise pricing.</div>
-  </section>
+
   <!-- Footer -->
   <footer class="footer">
-    &copy; 2025 ZK-PV • <a href="mailto:contact@zkpv.io">Contact</a> | <a href="#">Privacy Policy</a>
+    &copy; 2025 ZK-PV • All rights reserved. &nbsp; | &nbsp;
+    <a href="mailto:contact@zkpv.io" style="color:#333;text-decoration:underline;">Contact</a>
   </footer>
-  <script>
-    // Hero "changing word" animation
-    const words = ["Zero-knowledge", "Cryptographic", "Real-time", "Invisible", "Auditable"];
-    let idx = 0;
-    setInterval(()=>{
-      idx = (idx+1)%words.length;
-      document.getElementById("changingWord").textContent = words[idx];
-    }, 2100);
-  </script>
 </body>
 </html>
+
 
