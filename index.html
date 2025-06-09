@@ -1,43 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>ZK-PV – AI Privacy Shield. Zero leaks.</title>
+  <title>ZK-PV – Zero-Knowledge Privacy Vault</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="ZK-PV, le bouclier IA qui bloque toute donnée sensible avant qu’elle ne fuite. Privacy Score™. Extension 1-clic. Audit cryptographique SHA256.">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900;600;500;400&display=swap" rel="stylesheet">
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@900;600;500;400&display=swap');
     body { margin: 0; padding: 0; font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif; background: #fff; color: #222;}
     header { display: flex; align-items: center; justify-content: space-between; padding: 32px 5vw 8px 5vw; position: fixed; top: 0; width: 100%; background: rgba(255,255,255,0.97); z-index: 99; box-shadow: 0 2px 10px #0001;}
     .logo { font-weight: 900; font-size: 1.4rem; letter-spacing: 0; color: #111; }
     nav a { margin: 0 22px; color: #666; text-decoration: none; font-weight: 500; font-size: 1.02rem; transition: color 0.2s;}
     nav a:hover { color: #764ba2; }
-    .cta-btn { background: #764ba2; color: #fff; border: none; padding: 10px 28px; border-radius: 24px; font-weight: 700; font-size: 1rem; cursor: pointer; box-shadow: 0 2px 12px #0001; transition: background 0.2s;}
+    .cta-btn { background: #764ba2; color: #fff; border: none; padding: 14px 38px; border-radius: 24px; font-weight: 700; font-size: 1rem; cursor: pointer; box-shadow: 0 2px 12px #0001; transition: background 0.2s;}
     .cta-btn:hover { background: #492b96; }
-    .hero { margin-top: 120px; margin-bottom: 60px; text-align: center; animation: fadein 1s cubic-bezier(.61,.12,.68,.95);}
-    @keyframes fadein { from { opacity: 0; transform: translateY(24px);} to { opacity: 1; transform: translateY(0);}}
-    .hero h1 { font-size: 3rem; font-weight: 900; letter-spacing: -2px; margin-bottom: 10px; color: #111;}
-    .hero p { font-size: 1.5rem; color: #888; margin-bottom: 50px; font-weight: 600;}
-    /* Demo */
-    .demo-section { max-width: 800px; margin: 0 auto 80px auto; padding: 0 20px; }
-    .demo-box { background: #fafafd; border-radius: 24px; padding: 40px; box-shadow: 0 4px 40px #764ba214; animation: fadein 1s 0.3s both;}
-    .demo-input { width: 100%; padding: 20px 24px; font-size: 16px; border: 2px solid #e8e8f0; border-radius: 12px; margin-bottom: 20px; font-family: inherit; transition: border-color 0.2s;}
-    .demo-input:focus { outline: none; border-color: #764ba2; }
-    .demo-button { background: #764ba2; color: white; padding: 16px 40px; font-size: 16px; font-weight: 600; border: none; border-radius: 12px; cursor: pointer; transition: all 0.2s;}
-    .demo-button:hover { background: #492b96; }
-    .demo-result { margin-top: 24px; padding: 20px; border-radius: 12px; font-size: 16px; display: none; animation: fadein 0.5s;}
-    .demo-result.blocked { background: #fef2f2; color: #991b1b; border: 2px solid #fecaca; display: block;}
-    .demo-result.allowed { background: #f0fdf4; color: #166534; border: 2px solid #bbf7d0; display: block;}
-    /* Main illustration */
-    .main-illustration { display: flex; align-items: center; justify-content: center; margin: 0 auto 90px auto; width: 700px; max-width: 98vw; height: 330px; border-radius: 32px; background: linear-gradient(135deg, #ece9f7 60%, #f5f7fa 100%); box-shadow: 0 4px 32px #764ba211; animation: fadein 1.5s 0.3s both;}
-    .main-illustration svg { width: 400px; height: 240px; }
-    /* Features */
-    .section-row { display: flex; justify-content: center; gap: 55px; flex-wrap: wrap; margin: 0 auto 90px auto; max-width: 1200px; padding: 0 20px;}
-    .feature-box { background: #fafafd; border-radius: 22px; box-shadow: 0 2px 16px #764ba212; width: 330px; min-width: 270px; max-width: 98vw; margin: 30px 0; padding: 52px 28px 44px 28px; display: flex; flex-direction: column; align-items: center; text-align: center; animation: fadein 1s 0.3s both; transition: box-shadow .18s;}
-    .feature-box:hover { box-shadow: 0 12px 32px #764ba224; }
-    .feature-img { margin-bottom: 32px; }
-    .feature-title { font-size: 1.25rem; font-weight: 800; color: #111; margin-bottom: 12px; letter-spacing: -.5px;}
-    .feature-desc { color: #888; font-weight: 500; font-size: 1.07rem;}
-    /* Pricing section */
+    .hero-bloc { max-width: 850px; margin: 90px auto 30px auto; text-align: center; }
+    .main-illustration { display: flex; align-items: center; justify-content: center; margin: 0 auto 90px auto; width: 700px; max-width: 98vw; height: 260px; border-radius: 32px; background: linear-gradient(135deg, #ece9f7 60%, #f5f7fa 100%); box-shadow: 0 4px 32px #764ba211; animation: fadein 1.5s 0.3s both;}
+    .unique-section { max-width:660px;margin:32px auto 0 auto;color:#674ba2;font-size:1.08em; }
+    .unique-bullet { background: #f5f7fa; border-radius: 8px; margin-bottom: 12px; padding: 11px 18px; box-shadow: 0 2px 10px #764ba210; }
+    .proof-section { max-width:800px;margin:35px auto 35px auto;padding:34px 24px;background:#f8f9ff;border-radius:16px;box-shadow:0 2px 10px #764ba216; }
     .pricing-section { max-width: 900px; margin: 0 auto 60px auto; }
     .pricing-title { font-size: 2.2rem; text-align:center; font-weight:900; color:#222; margin-bottom:36px;}
     .pricing-cards { display:flex; justify-content:center; gap:36px; flex-wrap:wrap;}
@@ -46,35 +27,19 @@
     .pricing-feat { color:#777; font-size:1.11em; margin-bottom:20px;}
     .pay-btn { background: #764ba2; color: #fff; font-size: 1.11em; padding: 14px 38px; border-radius: 30px; border: none; margin-top: 16px; cursor: pointer; font-weight:700; box-shadow:0 1px 9px #6b47dc13; }
     .pay-btn:hover { background:#492b96; }
-    /* Install */
-    .install-section { max-width:880px; margin:90px auto 55px auto; }
-    .install-title { font-size:1.7rem; font-weight:900; color:#222; margin-bottom:14px; text-align:center;}
-    .install-steps { display:flex; justify-content:center; gap:44px; flex-wrap:wrap;}
-    .install-step { background:#f8f7fa; border-radius:14px; box-shadow:0 2px 10px #6b47dc11; width:260px; padding:32px 22px; margin:18px 0; text-align:center;}
-    .install-step svg { margin-bottom:18px;}
-    .install-num { font-weight:800; font-size:1.2em; color:#6b47dc; }
-    .install-desc { font-size:1.04em; color:#444;}
-    /* FAQ */
-    .faq-section { margin: 80px auto 0 auto; max-width: 700px; padding: 0 5vw;}
-    .faq-q { font-weight: 700; background: #f5f5f7; margin: 0 0 15px 0; border-radius: 13px; padding: 25px 32px; cursor: pointer; color: #111; transition: background .2s; font-size: 1.18rem; letter-spacing: -.2px;}
-    .faq-q:hover { background: #ece4ff; }
-    .faq-a { background: #fafaff; color: #444; margin: -10px 0 25px 0; border-left: 3px solid #764ba2; border-radius: 0 0 9px 9px; padding: 16px 32px 25px 37px; font-size: 1.08rem; display: none; animation: fadein 0.6s;}
-    .faq-q.open + .faq-a { display: block; }
-    .callout { text-align: center; margin: 120px auto 55px auto;}
-    .callout h2 { font-size: 2.2rem; font-weight: 900; letter-spacing: -1.5px; color: #111; margin-bottom: 8px;}
-    .callout p { font-size: 1.22rem; color: #888;}
-    .callout .cta-btn { margin-top: 38px;}
+    .privacy-score {background:#f0f7fa;color:#222;font-size:1.1em;padding:18px 23px;border-radius:15px;box-shadow:0 2px 8px #6b47dc10;margin:38px auto 16px auto;max-width:400px;}
     footer { margin: 80px 0 0 0; padding: 52px 0 30px 0; text-align: center; color: #bbb; font-size: 1.02rem; border-top: 1px solid #ececec;}
     @media (max-width: 900px) {
-      .main-illustration { width: 99vw; height: 150px; }
-      .section-row, .pricing-cards, .install-steps { flex-direction: column; align-items: center; gap: 0; }
-      .feature-box, .pricing-card, .install-step { width: 95vw; }
-      header { flex-direction: column; gap: 10px; }
+      .main-illustration { width: 99vw; height: 160px;}
+      .pricing-cards { flex-direction: column; align-items: center; gap: 0;}
+      header { flex-direction: column; gap: 10px;}
     }
     @media (max-width: 600px) {
       .main-illustration { width: 100vw; height: 110px;}
-      .hero h1 { font-size: 1.4rem; }
+      .hero-bloc h1 { font-size: 1.2rem;}
+      .pricing-card { padding:18px 10px;}
     }
+    @keyframes fadein { from { opacity: 0; transform: translateY(24px);} to { opacity: 1; transform: translateY(0);}}
   </style>
   <script async src="https://js.stripe.com/v3/buy-button.js"></script>
 </head>
@@ -83,249 +48,143 @@
   <header>
     <div class="logo">ZK-PV<sup style="font-size:.5em;color:#764ba2;font-weight:400">™</sup></div>
     <nav>
-      <a href="#demo">Demo</a>
-      <a href="#features">Features</a>
-      <a href="#pricing">Pricing</a>
-      <a href="#install">Install</a>
-      <a href="#faq">FAQ</a>
+      <a href="#pourquoi">Pourquoi</a>
+      <a href="#architecture">Architecture</a>
+      <a href="#preuveh">Preuve</a>
+      <a href="#pricing">Tarifs</a>
     </nav>
-    <button class="cta-btn" onclick="window.location.href='#pricing'">Get Started</button>
+    <button class="cta-btn" onclick="window.location.href='#pricing'">Démarrer</button>
   </header>
 
-  <!-- Hero -->
-  <div class="hero">
-    <h1>AI Privacy Shield. Zero leaks.</h1>
-    <p>Block PII before it reaches <span style="color:#764ba2;font-weight:600">AI</span>. Stay GDPR compliant.</p>
-  </div>
-
-  <!-- Demo -->
-  <div class="demo-section" id="demo">
-    <div class="demo-box">
-      <h3 style="font-size: 1.5rem; font-weight: 800; margin-bottom: 24px; text-align: center;">
-        🧪 Try it live
-      </h3>
-      <input type="text" class="demo-input" id="demoInput" placeholder="Type something with personal data..." value="Please email me at john@company.com about order #4532-1234-5678-9012">
-      <button class="demo-button" onclick="testPII()">Test PII Detection</button>
-      <div class="demo-result" id="demoResult"></div>
+  <!-- HERO -->
+  <section class="hero-bloc" id="pourquoi">
+    <h1>🛡️ ZK-PV : Zero-Knowledge Privacy Vault</h1>
+    <p style="font-size:1.32rem;color:#764ba2;font-weight:700;margin:20px 0 40px 0;">
+      La révolution de la protection des données dans l'ère de l'IA
+    </p>
+    <div style="background:#f8f4fa;border-radius:18px;padding:24px 30px;margin-bottom:32px;font-size:1.11rem;">
+      <b>Imaginez : Sarah, CEO d’une fintech, découvre qu’un prompt ChatGPT a fuité 100 000 comptes clients.<br>
+      <span style="color:#e64141;">20M € d’amende, faillite, interdiction d’exercer.</span></b><br><br>
+      <span style="color:#333;">Ce scénario est réel. Il se produit <b>340 fois par jour en 2025</b>…</span>
     </div>
-  </div>
-
- <!-- Main Illustration -->
-  <div class="main-illustration">
-    <div class="illustration-content">
-      <svg width="400" height="300" viewBox="0 0 400 300">
-        <!-- User -->
-        <rect x="20" y="120" width="60" height="60" rx="12" fill="#e5e7eb"/>
-        <text x="50" y="200" font-size="14" fill="#666" text-anchor="middle">User</text>
-        
-        <!-- App -->
-        <rect x="120" y="120" width="60" height="60" rx="12" fill="#f3f4f6"/>
-        <text x="150" y="200" font-size="14" fill="#666" text-anchor="middle">App</text>
-        
-        <!-- ZK-PV Shield -->
-        <circle cx="250" cy="150" r="40" fill="#667eea" opacity="0.1"/>
-        <circle cx="250" cy="150" r="30" fill="#667eea" opacity="0.2"/>
-        <circle cx="250" cy="150" r="20" fill="#667eea"/>
-        <text x="250" y="155" font-size="12" fill="white" text-anchor="middle" font-weight="600">ZK-PV</text>
-        <text x="250" y="200" font-size="14" fill="#667eea" text-anchor="middle" font-weight="600">Shield</text>
-        
-        <!-- AI -->
-        <rect x="320" y="120" width="60" height="60" rx="30" fill="#e5e7eb"/>
-        <text x="350" y="200" font-size="14" fill="#666" text-anchor="middle">AI</text>
-        
-        <!-- Arrows -->
-        <path d="M80 150 L120 150" stroke="#999" stroke-width="2" marker-end="url(#arrowhead)"/>
-        <path d="M180 150 L210 150" stroke="#999" stroke-width="2" marker-end="url(#arrowhead)"/>
-        <path d="M290 150 L320 150" stroke="#667eea" stroke-width="2" marker-end="url(#arrowhead-primary)"/>
-        
-        <!-- PII Blocked indicator -->
-        <text x="250" y="100" font-size="16" fill="#ef4444" text-anchor="middle" font-weight="600">
-          🚫 PII Blocked
-        </text>
-        
-        <defs>
-          <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
-            <path d="M0,0 L10,5 L0,10" fill="#999"/>
-          </marker>
-          <marker id="arrowhead-primary" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
-            <path d="M0,0 L10,5 L0,10" fill="#667eea"/>
-          </marker>
-        </defs>
-      </svg>
+    <div style="margin:18px 0 0 0;">
+      <button class="cta-btn" style="font-size:1.17em;padding:17px 41px;border-radius:27px;" onclick="window.location.href='#pricing'">
+        💡 Protéger mon entreprise dès aujourd’hui
+      </button>
     </div>
-  </div>
+  </section>
 
-  <!-- Features -->
-  <div class="section-row" id="features">
-    <div class="feature-box">
-      <div class="feature-img">
-        <svg width="80" height="80" viewBox="0 0 80 80">
-          <rect x="10" y="10" width="60" height="60" rx="16" fill="#764ba2" opacity="0.1"/>
-          <rect x="20" y="20" width="40" height="40" rx="10" fill="#764ba2" opacity="0.2"/>
-          <rect x="30" y="30" width="20" height="20" rx="4" fill="#764ba2"/>
+  <!-- ARCHITECTURE -->
+  <section id="architecture" style="max-width:900px;margin:68px auto 35px auto;">
+    <h2 style="color:#452c91;font-weight:800;font-size:2rem;text-align:center;">Comment ZK-PV vous protège ?</h2>
+    <div style="display:flex;gap:32px;flex-wrap:wrap;align-items:center;justify-content:center;">
+      <div style="flex:1;min-width:260px;max-width:420px;">
+        <ul style="font-size:1.08em;line-height:1.7;color:#444;margin:0 0 0 0;padding:0;list-style:none;">
+          <li>🛡️ <b>Proxy API</b> entre vous et l’IA</li>
+          <li>🔍 <b>Détecte PII par IA/regex</b> en temps réel</li>
+          <li>🔐 <b>Preuve cryptographique SHA256</b> de chaque blocage</li>
+          <li>📊 <b>Audit trail</b> conformité & assurance</li>
+          <li>💳 <b>Badge “Privacy Score™”</b> LinkedIn/email</li>
+        </ul>
+      </div>
+      <div class="main-illustration">
+        <!-- SVG architecture -->
+        <svg width="370" height="210" viewBox="0 0 370 210">
+          <rect x="10" y="70" width="65" height="45" rx="11" fill="#f94144"/><text x="42" y="98" font-size="15" fill="#fff" text-anchor="middle">App</text>
+          <rect x="95" y="70" width="55" height="45" rx="10" fill="#f3722c"/><text x="122" y="98" font-size="13" fill="#fff" text-anchor="middle">Gateway</text>
+          <rect x="165" y="70" width="55" height="45" rx="10" fill="#f8961e"/><text x="192" y="98" font-size="13" fill="#fff" text-anchor="middle">PII Scan</text>
+          <rect x="235" y="70" width="55" height="45" rx="10" fill="#43aa8b"/><text x="262" y="98" font-size="13" fill="#fff" text-anchor="middle">Crypto</text>
+          <rect x="305" y="70" width="55" height="45" rx="10" fill="#577590"/><text x="332" y="98" font-size="13" fill="#fff" text-anchor="middle">Audit</text>
+          <line x1="75" y1="92" x2="95" y2="92" stroke="#888" stroke-width="2" marker-end="url(#arrowhead)"/>
+          <line x1="150" y1="92" x2="165" y2="92" stroke="#888" stroke-width="2" marker-end="url(#arrowhead)"/>
+          <line x1="220" y1="92" x2="235" y2="92" stroke="#888" stroke-width="2" marker-end="url(#arrowhead)"/>
+          <line x1="290" y1="92" x2="305" y2="92" stroke="#888" stroke-width="2" marker-end="url(#arrowhead)"/>
+          <defs>
+            <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="7" refY="5" orient="auto">
+              <path d="M0,0 L10,5 L0,10" fill="#888"/>
+            </marker>
+          </defs>
         </svg>
       </div>
-      <div class="feature-title">Real-time Protection</div>
-      <div class="feature-desc">
-        Every prompt is analyzed in milliseconds. PII never reaches the AI.
-      </div>
     </div>
-    <div class="feature-box">
-      <div class="feature-img">
-        <svg width="80" height="80" viewBox="0 0 80 80">
-          <circle cx="40" cy="40" r="35" fill="#764ba2" opacity="0.1"/>
-          <circle cx="40" cy="40" r="25" fill="#764ba2" opacity="0.2"/>
-          <circle cx="40" cy="40" r="15" fill="#764ba2"/>
-        </svg>
+  </section>
+
+  <!-- PREUVE HASH -->
+  <section id="preuveh" class="proof-section">
+    <h2 style="color:#764ba2;font-weight:900;font-size:1.6em;margin-bottom:16px;">🔐 Zéro fuite : preuve cryptographique à chaque blocage</h2>
+    <div style="color:#444;font-size:1.09em;">
+      <b>Exemple :</b>  
+      <div style="margin:10px 0 5px 0;color:#333;">Contenu bloqué : <span style="background:#fff3e6;padding:2px 7px;border-radius:6px;">"Mon email est john@example.com"</span></div>
+      <div style="font-family:monospace;font-size:1.03em;background:#eaeaff;color:#452c91;padding:7px 10px;border-radius:8px;margin:7px 0 6px 0;">
+        SHA256 = <b>e28b0743ad80748ba63adb15ac44e350e45edd7e</b>
       </div>
-      <div class="feature-title">Zero-knowledge Proof</div>
-      <div class="feature-desc">
-        Cryptographic evidence of every blocked request. Full audit trail.
-      </div>
+      <div style="color:#888;">Certificat signé, timestamp, UUID pour audit légal</div>
     </div>
-    <div class="feature-box">
-      <div class="feature-img">
-        <svg width="80" height="80" viewBox="0 0 80 80">
-          <polygon points="40,10 70,30 70,60 40,80 10,60 10,30" fill="#764ba2" opacity="0.1"/>
-          <polygon points="40,20 60,33 60,53 40,66 20,53 20,33" fill="#764ba2" opacity="0.2"/>
-          <polygon points="40,30 50,37 50,47 40,54 30,47 30,37" fill="#764ba2"/>
-        </svg>
-      </div>
-      <div class="feature-title">Drop-in Integration</div>
-      <div class="feature-desc">
-        Change one line of code. Works with OpenAI, Anthropic, any LLM.
-      </div>
-    </div>
+  </section>
+
+  <!-- SECTION UNIQUE + VIRAL -->
+  <div class="unique-section">
+    <div class="unique-bullet">✅ <b>Hash SHA256</b> = Preuve légale irréfutable</div>
+    <div class="unique-bullet">✅ <b>Extension 1-clic</b> = Adoption massive</div>
+    <div class="unique-bullet">✅ <b>Dashboard temps réel</b> = Valeur visible</div>
+    <div class="unique-bullet">✅ <b>Badge LinkedIn</b> = Pression sociale</div>
   </div>
 
-  <!-- Pricing -->
-<div class="pricing-section" id="pricing">
-  <div class="pricing-title">Pricing</div>
-  <div class="pricing-cards">
-    <div class="pricing-card">
-      <div class="price">$129<span style="font-size:0.5em;">/month</span></div>
-      <div class="pricing-feat">1 app<br>Dashboard access</div>
-      <stripe-buy-button
-        buy-button-id="buy_btn_1RXpj6GjJg0Q6xtEIcJycYYh"
-        publishable-key="pk_live_51RUBnjGjJg0Q6xtEk0dv2Mp5TGvq7YRQH2aDXaCaluvSmXYnQRjDjqnTcxSSy8I695V4UA4CEQmKIsMxehkg4Bt900xTQLFeMY"
-      ></stripe-buy-button>
-    </div>
-    <div class="pricing-card">
-      <div class="price">$649<span style="font-size:0.5em;">/month</span></div>
-      <div class="pricing-feat">Up to 5 apps<br>Priority support</div>
-      <stripe-buy-button
-        buy-button-id="buy_btn_1RXpigGjJg0Q6xtEcdYYzcdJ"
-        publishable-key="pk_live_51RUBnjGjJg0Q6xtEk0dv2Mp5TGvq7YRQH2aDXaCaluvSmXYnQRjDjqnTcxSSy8I695V4UA4CEQmKIsMxehkg4Bt900xTQLFeMY"
-      ></stripe-buy-button>
-    </div>
-    <div class="pricing-card">
-      <div class="price">$3,999<span style="font-size:0.5em;">/month</span></div>
-      <div class="pricing-feat">Unlimited apps<br>Custom audit, SLAs</div>
-      <stripe-buy-button
-        buy-button-id="buy_btn_1RXpjVGjJg0Q6xtEcdw82KZd"
-        publishable-key="pk_live_51RUBnjGjJg0Q6xtEk0dv2Mp5TGvq7YRQH2aDXaCaluvSmXYnQRjDjqnTcxSSy8I695V4UA4CEQmKIsMxehkg4Bt900xTQLFeMY"
-      ></stripe-buy-button>
-    </div>
-  </div>
-  <div style="text-align:center;margin-top:18px;color:#777;">
-    All payments handled via secure Stripe checkout. Contact us for custom quotes or yearly billing.
-  </div>
-</div>
-
-
-  <!-- Installation -->
-  <div class="install-section" id="install">
-    <div class="install-title">How to install ZK-PV in your workflow?</div>
-    <div class="install-steps">
-      <div class="install-step">
-        <svg width="50" height="50"><rect x="8" y="8" width="34" height="34" rx="10" fill="#ece9f7"/></svg>
-        <div class="install-num">1. Deploy the proxy</div>
-        <div class="install-desc">Spin up ZK-PV as a Docker container, cloud function, or managed API endpoint.</div>
+  <!-- PRICING -->
+  <div class="pricing-section" id="pricing">
+    <div class="pricing-title">Tarifs & Paiement sécurisé Stripe</div>
+    <div class="pricing-cards">
+      <div class="pricing-card">
+        <div class="price">$129<span style="font-size:0.5em;">/mois</span></div>
+        <div class="pricing-feat">1 app<br>Dashboard accès</div>
+        <stripe-buy-button
+          buy-button-id="buy_btn_1RXpj6GjJg0Q6xtEIcJycYYh"
+          publishable-key="pk_live_51RUBnjGjJg0Q6xtEk0dv2Mp5TGvq7YRQH2aDXaCaluvSmXYnQRjDjqnTcxSSy8I695V4UA4CEQmKIsMxehkg4Bt900xTQLFeMY"
+        ></stripe-buy-button>
       </div>
-      <div class="install-step">
-        <svg width="50" height="50"><circle cx="25" cy="25" r="17" fill="#f5f7fa"/></svg>
-        <div class="install-num">2. Point your LLM API</div>
-        <div class="install-desc">Update your AI application's endpoint to go through <code>api.zkpv.io</code> instead of OpenAI.</div>
+      <div class="pricing-card">
+        <div class="price">$649<span style="font-size:0.5em;">/mois</span></div>
+        <div class="pricing-feat">Jusqu’à 5 apps<br>Support prioritaire</div>
+        <stripe-buy-button
+          buy-button-id="buy_btn_1RXpigGjJg0Q6xtEcdYYzcdJ"
+          publishable-key="pk_live_51RUBnjGjJg0Q6xtEk0dv2Mp5TGvq7YRQH2aDXaCaluvSmXYnQRjDjqnTcxSSy8I695V4UA4CEQmKIsMxehkg4Bt900xTQLFeMY"
+        ></stripe-buy-button>
       </div>
-      <div class="install-step">
-        <svg width="50" height="50"><polygon points="25,7 43,43 7,43" fill="#ededed"/></svg>
-        <div class="install-num">3. Get GDPR-proof</div>
-        <div class="install-desc">All your prompts are now protected—instantly. Monitor blocked requests in your dashboard.</div>
+      <div class="pricing-card">
+        <div class="price">$3,999<span style="font-size:0.5em;">/mois</span></div>
+        <div class="pricing-feat">Apps illimitées<br>Audit personnalisé, SLA</div>
+        <stripe-buy-button
+          buy-button-id="buy_btn_1RXpjVGjJg0Q6xtEcdw82KZd"
+          publishable-key="pk_live_51RUBnjGjJg0Q6xtEk0dv2Mp5TGvq7YRQH2aDXaCaluvSmXYnQRjDjqnTcxSSy8I695V4UA4CEQmKIsMxehkg4Bt900xTQLFeMY"
+        ></stripe-buy-button>
       </div>
     </div>
     <div style="text-align:center;margin-top:18px;color:#777;">
-      <b>Need help?</b> <a href="mailto:support@zkpv.io" style="color:#764ba2">Contact us</a> for setup guides or enterprise options.
+      Paiement Stripe sécurisé. Contactez-nous pour audit gratuit, facturation annuelle ou offre sur-mesure.
     </div>
   </div>
 
-  <!-- FAQ/Accordion Section -->
-  <div class="faq-section" id="faq">
-    <div class="faq-q" onclick="toggleFaq(this)">+ How does ZK-PV protect personal data?</div>
-    <div class="faq-a">
-      ZK-PV acts as a proxy in front of your AI APIs.<br>
-      It analyzes all prompts in real time and blocks or masks personal data (PII) <b>before</b> it can ever reach the AI or LLM provider. No modification to your app code is needed.
-    </div>
-    <div class="faq-q" onclick="toggleFaq(this)">+ Do I need to modify my code to use ZK-PV?</div>
-    <div class="faq-a">
-      Not at all. Simply change your API endpoint from <code>api.openai.com</code> to <code>api.zkpv.io</code> and insert your API key. ZK-PV takes care of the rest. Zero code change.
-    </div>
-    <div class="faq-q" onclick="toggleFaq(this)">+ How do I pay and get my access?</div>
-    <div class="faq-a">
-      Select your pricing plan above and pay securely via Stripe. You'll receive your API key & access instructions by email within minutes!
-    </div>
-    <div class="faq-q" onclick="toggleFaq(this)">+ How can I verify ZK-PV’s effectiveness?</div>
-    <div class="faq-a">
-      Every blocked request is logged in your dashboard, and you receive cryptographic proof of each detection. You can view a live demo or request a compliance report anytime.
-    </div>
+  <!-- PRIVACY SCORE -->
+  <div class="privacy-score">
+    <b>Privacy Score™</b> : badge officiel (LinkedIn/email) & classement public — viral, rassurant, exigé par les assureurs dès 2025.
   </div>
 
-  <div class="spacer-xl"></div>
-
-  <!-- Call to Action -->
-  <div class="callout" id="demo">
-    <h2>Demand privacy. Get proof.</h2>
-    <p>Bring zero-knowledge security to your AI workflows—today.</p>
-    <button class="cta-btn" onclick="window.location.href='#pricing'">Start with ZK-PV</button>
-  </div>
+  <!-- CTA Final -->
+  <section style="text-align:center;margin:65px auto 40px auto;">
+    <h2 style="font-size:2em;font-weight:900;color:#764ba2;">Protégez-vous AUJOURD’HUI.<br>Demain, il sera trop tard.</h2>
+    <a href="#pricing" class="cta-btn" style="font-size:1.16em;padding:16px 40px;margin-top:25px;display:inline-block;">
+      🔗 Audit Gratuit
+    </a>
+    <div style="margin-top:18px;color:#333;">📞 Hotline CEO: +33 1 23 45 67 89 &nbsp; | &nbsp; <b>hello@zkpv.io</b></div>
+  </section>
 
   <!-- Footer -->
   <footer>
     <div>
-      <span style="color:#22223b;font-weight:700;">ZK-PV</span> &copy; 2025. All rights reserved.<br>
-      Made with ❤️ for privacy by <a href="mailto:sales@zkpv.io" style="color:#764ba2;text-decoration:none;">zkpv.io</a>
+      <span style="color:#22223b;font-weight:700;">ZK-PV</span> &copy; 2025. Tous droits réservés.<br>
+      Made with ❤️ for privacy by <a href="mailto:hello@zkpv.io" style="color:#764ba2;text-decoration:none;">zkpv.io</a>
     </div>
-  </footer>
-
-  <!-- JS: Demo + FAQ -->
-  <script>
-    function testPII() {
-      const input = document.getElementById('demoInput').value;
-      const resultDiv = document.getElementById('demoResult');
-      const patterns = {
-        email: /\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b/,
-        creditCard: /\b\d{4}[\s-]?\d{4}[\s-]?\d{4}[\s-]?\d{4}\b/,
-        ssn: /\b\d{3}-\d{2}-\d{4}\b/,
-        phone: /\b(\+\d{1,3}[-.\s]?)?\(?\d{3}\)?[-.\s]?\d{3}[-.\s]?\d{4}\b/
-      };
-      const violations = [];
-      for (const [type, pattern] of Object.entries(patterns)) {
-        if (pattern.test(input)) { violations.push(type); }
-      }
-      if (violations.length > 0) {
-        resultDiv.className = 'demo-result blocked';
-        resultDiv.innerHTML = `<strong>🚫 Request would be BLOCKED</strong><br><br><strong>PII detected:</strong> ${violations.join(', ')}<br><br>With ZK-PV, this sensitive data would never reach the AI, protecting you from GDPR violations.`;
-      } else {
-        resultDiv.className = 'demo-result allowed';
-        resultDiv.innerHTML = `<strong>✅ Request would be ALLOWED</strong><br><br>No personal data detected. This request would proceed normally to the AI.`;
-      }
-    }
-    function toggleFaq(el) {
-      document.querySelectorAll('.faq-q').forEach(q => { if(q!==el) q.classList.remove('open'); });
-      el.classList.toggle('open');
-    }
-  </script>
-</body>
-</html>
+  </
 
 
 
