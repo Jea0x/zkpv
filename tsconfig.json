@@ -1,0 +1,41 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "lib": ["ES2022"],
+    "module": "commonjs",
+    "declaration": true,
+    "outDir": "./dist",
+    "rootDir": "./",
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "moduleResolution": "node",
+    "baseUrl": "./",
+    "paths": {
+      "@zkpv/core": ["packages/core/src"],
+      "@zkpv/ai-agent": ["packages/ai-agent/src"],
+      "@zkpv/governance": ["packages/governance/src"]
+    },
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true
+  },
+  "include": [
+    "packages/**/*",
+    "apps/**/*",
+    "contracts/**/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "build",
+    "artifacts",
+    "cache"
+  ]
+}
