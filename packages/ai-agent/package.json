@@ -1,0 +1,23 @@
+{
+  "name": "@zkpv/ai-agent",
+  "version": "1.0.0",
+  "description": "ZKPV AI Agent - Intelligent code analysis and development assistance",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "test": "jest",
+    "lint": "eslint src/**/*.ts",
+    "clean": "rm -rf dist"
+  },
+  "dependencies": {
+    "@zkpv/core": "workspace:*"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.0",
+    "jest": "^29.5.0",
+    "eslint": "^8.42.0",
+    "@typescript-eslint/eslint-plugin": "^5.59.0",
+    "@typescript-eslint/parser": "^5.59.0"
+  }
+}

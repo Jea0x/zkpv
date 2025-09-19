@@ -1,0 +1,31 @@
+{
+  "name": "zkpv-monorepo",
+  "version": "1.0.0",
+  "description": "Blockchain 5.0 Collaborative Development Platform - Zero-Knowledge Private Verification",
+  "private": true,
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "scripts": {
+    "build": "yarn workspaces run build",
+    "test": "yarn workspaces run test",
+    "lint": "yarn workspaces run lint",
+    "clean": "yarn workspaces run clean",
+    "dev": "yarn workspace @zkpv/backend dev & yarn workspace @zkpv/frontend dev",
+    "compile": "hardhat compile",
+    "deploy:localhost": "hardhat run scripts/deploy.ts --network localhost",
+    "node": "hardhat node"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "^5.0.0",
+    "hardhat": "^2.19.0",
+    "@nomicfoundation/hardhat-toolbox": "^4.0.0"
+  },
+  "packageManager": "yarn@3.6.0",
+  "engines": {
+    "node": ">=18.0.0",
+    "yarn": ">=3.0.0"
+  }
+}
